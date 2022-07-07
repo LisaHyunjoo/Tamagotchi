@@ -1,0 +1,12 @@
+body {
+    background-image: url("https://t3.ftcdn.net/jpg/00/88/98/18/360_F_88981880_YjJManMJ6hJmKr5CZteFJAkEzXIh8mxW.jpg");
+    background-size: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    text-align: center;
+    color: rgb(12, 95, 168);
+    font-size: 30px;
+ }
+
