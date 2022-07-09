@@ -38,6 +38,18 @@ userInstruction.addEventListener('click', function() {
 //Morph your pet at certain ages.
 
 // ask pet's name 
+const userInput = document.querySelector('#user-input')
+const inputSpan = document.querySelector('#input-span')
+
+const getName = () => {
+    document.querySelector("#input-button").addEventListener('click', function(){
+    inputSpan.innerText = `Let's have fun with ${userInput.value}!`
+        //reset the value of the input
+        userInput.value = ''
+    })
+}
+getName()
+
 // Input pet's name => Count {
     // Age
     // Hunger (1-10 scale)
