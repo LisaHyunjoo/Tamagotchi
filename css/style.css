@@ -1,4 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 body {
+    font-family: 'Press Start 2P', cursive;
     background-image: url("https://t3.ftcdn.net/jpg/00/88/98/18/360_F_88981880_YjJManMJ6hJmKr5CZteFJAkEzXIh8mxW.jpg");
     background-size: 100%; 
     background-position: center;
@@ -6,7 +8,7 @@ body {
     background-attachment: fixed;
 
     text-align: center;
-    color: rgb(12, 95, 168);
+    color: rgb(7, 57, 98);
     font-size: 30px;
  }
 
@@ -19,8 +21,9 @@ a:hover, a:active {
 }
 
 .pokeBall {
-  width: 100px;
-  height: 100px;
+  max-width: 230px;
+  max-height: 230px;
+  margin: 50px;
   position: relative;
   animation: mymove 5s infinite;
 }
@@ -29,8 +32,46 @@ a:hover, a:active {
   from {
     transform: translateX(-100%);
   }
-
   to {
     transform: translateX(100%);
   }
+}
+
+.content{
+  /* background-color: brown; */
+  display: flex;
+  flex-direction: row;
+  float:none;
+  justify-content: space-around;
+}
+
+.score{
+  /* background-color: beige; */
+  /* font-size: 20px; */
+  float: left;
+  text-align: left;
+  margin: 50px;
+  padding: 20px;
+}
+
+
+.clickbtn {
+  /* background-color: blueviolet; */
+  display: flex;
+  flex-direction: column;
+  float: right;
+  margin: 50px;
+}
+
+.button {
+ background-color: white;
+ opacity: 0.8;
+ width: 150px;
+ /* font-size: 20px; */
+ margin: 10px;
+ padding: 20px;
+ text-align:center;
+ /* border: 2px solid rgb(38, 98, 3); */
+ /* border-radius: 5px; */
+ 
 }

@@ -64,12 +64,16 @@ const startGame = () => {
     const getAge = function() {
         dieTen()
         age.innerHTML = `Pet's age: ${doggy.age++}`
-        if(doggy.age == 3){
+        if (doggy.age == 1){
             //Morph your pet at certain ages.
-            alert('Your pet is 3!')
-            document.querySelector('.pokeBall').setAttribute('src','https://media1.giphy.com/media/521ZQUjhdxUZnI88MB/giphy.gif')
+            alert('Egg is hatching!!')
+            document.querySelector('.pokeBall').setAttribute('src','https://media0.giphy.com/media/4T3tuAa2WLJJEF8DSr/giphy.gif')
         }
-        if(doggy.age == 7){
+        if(doggy.age == 5){
+            alert('Your pet is 3!')
+            document.querySelector('.pokeBall').setAttribute('src','https://media4.giphy.com/media/1o1oyOi61yOeGG7MtL/giphy.gif')
+        }
+        if(doggy.age == 10){
             alert('Your pet is 7!')
             document.querySelector('.pokeBall').setAttribute('src','https://media4.giphy.com/media/8YHm1R9M8HqNLR6s7G/giphy.gif')
         }
@@ -80,19 +84,19 @@ const startGame = () => {
         dieTen()
         hungerScore.innerHTML = `Hunger Score: ${doggy.hunger++}`
     }
-    countHunger = setInterval(getHunger,1200)
+    countHunger = setInterval(getHunger,2300)
     
     const getBoredom = function () {
         dieTen()
         boredomScore.innerHTML = `Boredom Score: ${doggy.boredom++}`
     }
-    countBoredom = setInterval(getBoredom,1700)
+    countBoredom = setInterval(getBoredom,2700)
     
     const getSleep = function () {
         dieTen()
         sleepScore.innerHTML = `sleepiness Score: ${doggy.sleepiness++}`
     }
-    countSleep = setInterval(getSleep,1300) 
+    countSleep = setInterval(getSleep,3200) 
 
     // You pet should die if Hunger, Boredom, or Sleepiness hits 10.
     const dieTen = function () {
@@ -117,12 +121,15 @@ const startGame = () => {
 const clickBtn = () => {
     treatBtn.addEventListener('click', function(){
         hungerScore.innerHTML = `Hunger Score: ${doggy.hunger--}`
+        document.body.style.backgroundImage = "url(https://t3.ftcdn.net/jpg/00/88/98/18/360_F_88981880_YjJManMJ6hJmKr5CZteFJAkEzXIh8mxW.jpg)"
     })
     playBtn.addEventListener('click', function(){
         boredomScore.innerHTML = `Boredom Score: ${doggy.boredom--}`
-    })
+        document.body.style.backgroundImage = "url(https://t3.ftcdn.net/jpg/00/88/98/18/360_F_88981880_YjJManMJ6hJmKr5CZteFJAkEzXIh8mxW.jpg)"
+    })  
     sleepBtn.addEventListener('click', function(){
         sleepScore.innerHTML = `Sleepiness Score: ${doggy.sleepiness--}`
+        document.body.style.backgroundImage = "url(https://thumbs.dreamstime.com/b/forest-game-background-d-application-vector-design-tileable-horizontally-size-ready-parallax-effect-47652714.jpg)"
     })
 }
 
