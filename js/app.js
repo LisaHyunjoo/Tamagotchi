@@ -34,7 +34,7 @@ userInstruction.addEventListener('click', function() {
     alert("Enjoy your game!")
 })
 
-//press start button => display a character.
+
 //Morph your pet at certain ages.
 
 // ask pet's name 
@@ -50,16 +50,56 @@ const getName = () => {
 }
 getName()
 
-// Input pet's name => Count {
-    // Age
-    // Hunger (1-10 scale)
-    // Sleepiness (1-10 scale)
-    // Boredom (1-10 scale)
-//} 
-
-
+//press start button => display a character.
 // Increase pet's Hunger, Sleepiness, and Bored metrics on an interval of your choosing.
+const age = document.querySelector('#age')
+const hungerScore = document.querySelector('#hungerScore')
+const boredomScore = document.querySelector('#boredomScore')
+const sleepScore = document.querySelector('#sleepScore')
+const starBtn = document.querySelector('#game-start')
+let countAge = null 
 
+const treatBtn = document.querySelector("#feed-btn")
+const playBtn = document.querySelector("#play-btn")
+const sleepBtn = document.querySelector("#sleep-btn")
+
+const startGame = () => {
+    const getAge = function() {
+        dieTen()
+        age.innerHTML = `Pet's age: ${doggy.age++}`
+    }
+    countAge = setInterval(getAge,1500)
+    
+    const getHunger = function () {
+        dieTen()
+        hungerScore.innerHTML = `Hunger Score: ${doggy.hunger++}`
+    }
+    countHunger = setInterval(getHunger,1200)
+    
+    const getBoredom = function () {
+        dieTen()
+        boredomScore.innerHTML = `Boredom Score: ${doggy.boredom++}`
+    }
+    countBoredom = setInterval(getBoredom,1700)
+    
+    const getSleep = function () {
+        dieTen()
+        sleepScore.innerHTML = `sleepiness Score: ${doggy.sleepiness++}`
+    }
+    countSleep = setInterval(getSleep,1300) 
+
+    const dieTen = function () {
+        if(doggy.hunger == 11 || doggy.boredom == 11 || doggy.sleepiness == 11) {  
+            clearInterval(countAge)
+            clearInterval(countHunger)
+            clearInterval(countBoredom)
+            clearInterval(countSleep)
+        }
+    }
+}
+
+
+starBtn.addEventListener('click', startGame())
 // Add buttons to the screen to feed pet, turn off the lights, and play with  pet.
 // one click each btn => count -1 the scale
 
