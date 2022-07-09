@@ -94,13 +94,34 @@ const startGame = () => {
             clearInterval(countHunger)
             clearInterval(countBoredom)
             clearInterval(countSleep)
+            alert('RIP your pet is in heaven now')
+            treatBtn.disabled = true
+            playBtn.disabled = true
+            sleepBtn.disabled = true
         }
     }
 }
 
-
-starBtn.addEventListener('click', startGame())
 // Add buttons to the screen to feed pet, turn off the lights, and play with  pet.
 // one click each btn => count -1 the scale
+const clickBtn = () => {
+    treatBtn.addEventListener('click', function(){
+        hungerScore.innerHTML = `Hunger Score: ${doggy.hunger--}`
+    })
+    playBtn.addEventListener('click', function(){
+        boredomScore.innerHTML = `Boredom Score: ${doggy.boredom--}`
+    })
+    sleepBtn.addEventListener('click', function(){
+        sleepScore.innerHTML = `Sleepiness Score: ${doggy.sleepiness--}`
+    })
+}
+
+
+starBtn.addEventListener('click', () => {
+    startGame()
+    clickBtn()
+}
+)
+
 
 // You pet should die if Hunger, Boredom, or Sleepiness hits 10.
