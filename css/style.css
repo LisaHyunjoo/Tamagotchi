@@ -1,15 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+body, button, input {
+  font-family: 'Press Start 2P', cursive;
+}
 body {
-    font-family: 'Press Start 2P', cursive;
+    /* font-family: 'Press Start 2P', cursive; */
     background-image: url("https://t3.ftcdn.net/jpg/00/88/98/18/360_F_88981880_YjJManMJ6hJmKr5CZteFJAkEzXIh8mxW.jpg");
     background-size: 100%; 
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-
     text-align: center;
     color: rgb(7, 57, 98);
-    font-size: 30px;
+    font-size: 25px;
  }
 
  a:link {
@@ -63,15 +65,31 @@ a:hover, a:active {
   margin: 50px;
 }
 
+#user-input, #input-button, .button{
+  padding: 10px;
+  font-size: 0.5em;
+  background-color: white;
+  border-radius: 10px;
+}
+
 .button {
- background-color: white;
  opacity: 0.8;
  width: 150px;
- /* font-size: 20px; */
  margin: 10px;
- padding: 20px;
  text-align:center;
  /* border: 2px solid rgb(38, 98, 3); */
- /* border-radius: 5px; */
+}
+
+#input-span, #howtoplay {
+  font-size: 20px;
+}
+
+#game-start{
+  color: white;
+  background-color: red;
  
+}
+
+button:hover {
+  background-color: rgb(243, 243, 168);
 }

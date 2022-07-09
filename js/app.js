@@ -53,7 +53,7 @@ const age = document.querySelector('#age')
 const hungerScore = document.querySelector('#hungerScore')
 const boredomScore = document.querySelector('#boredomScore')
 const sleepScore = document.querySelector('#sleepScore')
-const starBtn = document.querySelector('#game-start')
+const startBtn = document.querySelector('#game-start')
 let countAge = null 
 
 const treatBtn = document.querySelector("#feed-btn")
@@ -61,6 +61,12 @@ const playBtn = document.querySelector("#play-btn")
 const sleepBtn = document.querySelector("#sleep-btn")
 
 const startGame = () => {
+    startBtn.disabled = true
+    const resetBtn = document.createElement('button')
+    resetBtn.innerText = "Reset"
+    document.body.appendChild(resetBtn)
+    resetBtn.classList.add('button')
+   
     const getAge = function() {
         dieTen()
         age.innerHTML = `Pet's age: ${doggy.age++}`
@@ -114,7 +120,10 @@ const startGame = () => {
             sleepBtn.disabled = true
         }
     }
+    
 }
+
+
 
 // Add buttons to the screen to feed pet, turn off the lights, and play with  pet.
 // one click each btn => count -1 the scale
@@ -133,10 +142,15 @@ const clickBtn = () => {
     })
 }
 
-starBtn.addEventListener('click', () => {
+startBtn.addEventListener('click', () => {
     startGame()
     clickBtn()
 }
 )
 
+resetBtn.addEventListener('click',  () => {
+    startBtn.disabled = true
+    startGame()
+    clickBtn()
+})
 
