@@ -34,9 +34,6 @@ userInstruction.addEventListener('click', function() {
     alert("Enjoy your game!")
 })
 
-
-//Morph your pet at certain ages.
-
 // ask pet's name 
 const userInput = document.querySelector('#user-input')
 const inputSpan = document.querySelector('#input-span')
@@ -67,6 +64,15 @@ const startGame = () => {
     const getAge = function() {
         dieTen()
         age.innerHTML = `Pet's age: ${doggy.age++}`
+        if(doggy.age == 3){
+            //Morph your pet at certain ages.
+            alert('Your pet is 3!')
+            document.querySelector('.pokeBall').setAttribute('src','https://media1.giphy.com/media/521ZQUjhdxUZnI88MB/giphy.gif')
+        }
+        if(doggy.age == 7){
+            alert('Your pet is 7!')
+            document.querySelector('.pokeBall').setAttribute('src','https://media4.giphy.com/media/8YHm1R9M8HqNLR6s7G/giphy.gif')
+        }
     }
     countAge = setInterval(getAge,1500)
     
@@ -88,13 +94,17 @@ const startGame = () => {
     }
     countSleep = setInterval(getSleep,1300) 
 
+    // You pet should die if Hunger, Boredom, or Sleepiness hits 10.
     const dieTen = function () {
         if(doggy.hunger == 11 || doggy.boredom == 11 || doggy.sleepiness == 11) {  
             clearInterval(countAge)
             clearInterval(countHunger)
             clearInterval(countBoredom)
             clearInterval(countSleep)
+
+            document.querySelector('.pokeBall').setAttribute('src','https://media4.giphy.com/media/51Wwiu1w9BEIdiGbwq/giphy.gif')
             alert('RIP your pet is in heaven now')
+            
             treatBtn.disabled = true
             playBtn.disabled = true
             sleepBtn.disabled = true
@@ -116,7 +126,6 @@ const clickBtn = () => {
     })
 }
 
-
 starBtn.addEventListener('click', () => {
     startGame()
     clickBtn()
@@ -124,4 +133,3 @@ starBtn.addEventListener('click', () => {
 )
 
 
-// You pet should die if Hunger, Boredom, or Sleepiness hits 10.
