@@ -17,3 +17,20 @@ body {
 a:hover, a:active {
   color: red;
 }
+
+.pokeBall {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  animation: mymove 5s infinite;
+}
+
+@keyframes mymove {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(100%);
+  }
+}
