@@ -23,7 +23,16 @@ class Pet extends Tamagotchi {
 const doggy = new Pet();
 
 //clicking howtoplay tag => 
-//game instructions display on webpage. 
+//game instructions pop up 
+const userInstruction = document.querySelector("#howtoplay")
+userInstruction.addEventListener('click', function() {
+    alert("Take care of your pet")
+    alert("1. Feed your pet")
+    alert("2. Play with your pet")
+    alert("3. Turn light off to your pet sleep")
+    alert("4. your pet will die if Hunger, Boredom, or Sleepiness hits 10.")
+    alert("Enjoy your game!")
+})
 
 //press start button => display a character.
 //Morph your pet at certain ages.
